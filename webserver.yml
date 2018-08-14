@@ -2,6 +2,9 @@
 - hosts: webserver
   become: true
   tasks:
+    - name: install python 2
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
     - name: install web components
       apt: name={{item}} state=present update_cache=yes
       with_items:
