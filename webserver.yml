@@ -13,6 +13,14 @@
 #        - python-pip
 #        - python-virtualenv
 
+    # Synchronize two directories on one remote host.
+    - synchronize:
+        src: /home/ubuntu/ansible-nab/dazzle
+        dest: /var/www/html
+
+    - name: copy html file
+      copy: src=/home/vagrant/dist/ dest=/var/www/html/ remote_src=yes directory_mode=yes
+
     - name: ensure apache2 started
       service: name=apache2 state=started enabled=yes
 
