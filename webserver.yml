@@ -15,8 +15,8 @@
 
     # Synchronize two directories on one remote host.
     - synchronize:
-        src: /home/ubuntu/ansible-nab/dazzle/
-        dest: /var/www/html/
+        src: /home/ubuntu/ansible-nab/html
+        dest: /var/www/
 
 #    - name: copy html file
 #      copy: src=/home/vagrant/dist/ dest=/var/www/html/ remote_src=yes directory_mode=yes
