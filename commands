@@ -11,4 +11,7 @@ ansible -i test --list-hosts webserver[0]
 
 
 # Command Module
-ansible -a "hostname" all
+ansible -e 'ansible_python_interpreter=/usr/bin/python3' -a "hostname" all
+
+# Run Playbook
+ansible-playbook -e 'ansible_python_interpreter=/usr/bin/python3' webserver.yml
